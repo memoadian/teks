@@ -1,6 +1,70 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
+    <div class="back">
+      <div class="white"></div>
+      <img src="~@/assets/toks.jpg" alt="electron-vue">
+    </div>
+    <div class="header">
+      <b-container>
+        <img src="~@/assets/logo.jpg" alt="" class="logo">
+      </b-container>
+    </div>
+    <b-container>
+      <b-row>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/">
+              <img id="pie-chart" src="~@/assets/001-pie-chart.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center">AYUDAS VISUALES</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/directorio">
+              <img id="directory" src="~@/assets/002-directory.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center">DIRECTORIO</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/">
+              <img id="question" src="~@/assets/003-question.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center help">PREGUNTAS FRECUENTES</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/">
+              <img id="process" src="~@/assets/004-process.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center">PROCEDIMIENTOS</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/">
+              <img id="calendar" src="~@/assets/005-calendar.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center">RECORDATORIOS</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+        <b-col lg="4" sm="6" cols="6">
+          <b-card>
+            <router-link to="/">
+              <img id="home" src="~@/assets/006-home.png" alt="electron-vue" class="img-fluid">
+              <h4 class="text-center">UNIDADES</h4>
+            </router-link>
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
+  <!--<div id="wrapper">
     <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+    <h4 class="text-center"></h4>
     <main>
       <div class="left-side">
         <span class="title">
@@ -26,103 +90,77 @@
         </div>
       </div>
     </main>
-  </div>
+  </div>-->
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
     methods: {
-      open (link) {
-        this.$electron.shell.openExternal(link)
-      }
     }
   }
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body { font-family: 'Source Sans Pro', sans-serif; }
-
-  #wrapper {
-    background:
-      radial-gradient(
-        ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(229, 229, 229, .9) 100%
-      );
-    height: 100vh;
-    padding: 60px 80px;
-    width: 100vw;
-  }
-
-  #logo {
-    height: auto;
-    margin-bottom: 20px;
-    width: 420px;
-  }
-
-  main {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  main > div { flex-basis: 50%; }
-
-  .left-side {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .welcome {
-    color: #555;
-    font-size: 23px;
-    margin-bottom: 10px;
-  }
-
-  .title {
-    color: #2c3e50;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-
-  .title.alt {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .doc p {
-    color: black;
-    margin-bottom: 10px;
-  }
-
-  .doc button {
-    font-size: .8em;
-    cursor: pointer;
-    outline: none;
-    padding: 0.75em 2em;
-    border-radius: 2em;
-    display: inline-block;
-    color: #fff;
-    background-color: #4fc08d;
-    transition: all 0.15s ease;
-    box-sizing: border-box;
-    border: 1px solid #4fc08d;
-  }
-
-  .doc button.alt {
-    color: #42b983;
-    background-color: transparent;
-  }
+.header{
+  background: rgb(23, 22, 29);
+  height: 60px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+}
+.logo{
+  margin: 8px 0;
+  height: 100px;
+}
+a, a:hover{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.white{
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.back{
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+.back img{
+  min-width: 100%;
+  min-height: 100%;
+}
+.card{
+  background: transparent;
+  border: 0px solid transparent;
+}
+.card-body img{
+  padding: 60px 60px 10px 60px;
+}
+h4{
+  padding: 30px 0 0 0;
+  height: 100px;
+  font-size: 26px;
+  text-shadow: 1px 1px 1px #000;
+}
+h4.help{
+  padding: 38px 0 0 0;
+  height: 100px;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+}
+@media (max-width: 980px) {
+  .card-body img{padding: 30px 30px 5px 30px;}
+}
+@media (max-width: 640px) {
+  .card-body img{ padding: 5px; }
+  h4{ font-size: 14px; }
+  h4.help{ font-size: 12px; }
+}
 </style>
